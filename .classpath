@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="ConvertedTexts"/>
+	<classpathentry kind="src" path="SourceFiles"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/pdfbox-app-2.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/poi-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/poi-ooxml-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/poi-ooxml-schemas-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/lucene-4.7.0/core/lucene-core-4.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/lucene-4.7.0/queryparser/lucene-queryparser-4.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/lucene-4.7.0/demo/lucene-demo-4.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/lucene-4.7.0/queries/lucene-queries-4.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/lucene-4.7.0/analysis/common/lucene-analyzers-common-4.7.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -9,7 +9,7 @@ import modelo.TextEngine;
 public class Controlador {
 	
 	GUI inter;
-	TextEngine engine = new TextEngine("C:/Users/Falva/Java Work/Library_Lucene/SourceFiles");
+	TextEngine engine = new TextEngine("C:/Users/Falva/Java Work/Library_Lucene/SourceFiles/");
 	
 	public Controlador(GUI interfaz){
 		inter = interfaz;

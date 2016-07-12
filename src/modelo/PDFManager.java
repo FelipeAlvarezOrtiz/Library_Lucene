@@ -30,15 +30,15 @@ public class PDFManager {
 		
 		file = new File(filePath);
 		parser = new PDFParser(new RandomAccessFile(file,"r"));
-		
 		parser.parse();
+		
 		cosDoc = parser.getDocument();
 		pdfStripper = new PDFTextStripper();
 		pdDoc = new PDDocument(cosDoc);
 		pdfStripper.setStartPage(1);
 		pdfStripper.setEndPage(pdDoc.getNumberOfPages());
-		
 		text = pdfStripper.getText(pdDoc);
+		cosDoc.close();
 		return text;
 	}
 	

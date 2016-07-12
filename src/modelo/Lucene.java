@@ -137,7 +137,7 @@ public class Lucene {
 		try {
 			Query consulta = new QueryParser(Version.LUCENE_47,campo,analizador).parse(SearchedString);
 			int hitsPorPagina = 99999; //NxumeroMaximo de hits/campos a retornar
-			
+	
 			DirectoryReader directorio = DirectoryReader.open(indice);
 			buscador = new IndexSearcher(directorio);
 			TopScoreDocCollector collector = TopScoreDocCollector.create(hitsPorPagina,true);

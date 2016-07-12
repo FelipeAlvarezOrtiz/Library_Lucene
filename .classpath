@@ -14,5 +14,6 @@
 	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/lucene-4.7.0/demo/lucene-demo-4.7.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/lucene-4.7.0/queries/lucene-queries-4.7.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/lucene-4.7.0/analysis/common/lucene-analyzers-common-4.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Falva/Java Work/Library_Lucene/Libs/tika-app-1.13.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

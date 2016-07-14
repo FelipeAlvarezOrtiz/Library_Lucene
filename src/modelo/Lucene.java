@@ -1,6 +1,8 @@
 package modelo;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -135,8 +137,9 @@ public class Lucene {
 	//ScoreDoc mantiene los hits devueltos por topDocs, que representa los hits retornados por IndexSearch
 	public ScoreDoc[] buscar(String SearchedString, String campo,String indexFolder) throws ParseException,IOException{
 		try {
+			analizador = new StandardAnalyzer(Version.LUCENE_47);
 			Query consulta = new QueryParser(Version.LUCENE_47,campo,analizador).parse(SearchedString);
-			int hitsPorPagina = 99999; //NxumeroMaximo de hits/campos a retornar
+			int hitsPorPagina = 9999999; //NxumeroMaximo de hits/campos a retornar
 	
 			DirectoryReader directorio = DirectoryReader.open(indice);
 			buscador = new IndexSearcher(directorio);
@@ -245,4 +248,22 @@ public class Lucene {
 			}
 		}
 	}
+	
+	public void CrearIni(String path) throws IOException{
+		File archivoAux = new File(path+"/systemRecover.ini");
+		BufferedWriter bw = new BufferedWriter(new FileWriter(archivoAux));
+		bw.write("Indexado Exitosamente");
+		bw.close();
+	}
+	
+	public boolean existeIni(String path){
+		File archivoAux = new File(path+"/systemRecover.ini");
+		if(archivoAux.exists()){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
 }

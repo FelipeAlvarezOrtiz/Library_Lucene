@@ -47,12 +47,17 @@ public class TextEngine {
 		for(int i = 0;i<pdfFiles.size();i++){
 			try{
 			PDFManager pdfConverter = new PDFManager();
-			System.out.println("Escribiendo "+pdfFiles.get(i).getName());
-			String nameAux = pdfFiles.get(i).getName().substring(0, pdfFiles.get(i).getName().length()-5);
+			String nameAux = pdfFiles.get(i).getName().substring(0, pdfFiles.get(i).getName().length()-4);
 			File archivoAux = new File("C:/Users/Falva/Java Work/Library_Lucene/ConvertedTexts/"+nameAux+".txt");
-			BufferedWriter bw = new BufferedWriter(new FileWriter(archivoAux));
-			bw.write(pdfConverter.ToText("C:/Users/Falva/Java Work/Library_Lucene/SourceFiles/"+pdfFiles.get(i).getName()));
-			bw.close();
+			if(archivoAux.exists()){
+				System.out.println("archivo "+nameAux+" ya existe");
+			}
+			else{
+				System.out.println("Escribiendo "+pdfFiles.get(i).getName());
+				BufferedWriter bw = new BufferedWriter(new FileWriter(archivoAux));
+				bw.write(pdfConverter.ToText("C:/Users/Falva/Java Work/Library_Lucene/SourceFiles/"+pdfFiles.get(i).getName()));
+				bw.close();
+			}
 			}catch(IOException ex){
 				JOptionPane.showMessageDialog(null, "Imposible leer archivos PDF");
 				ex.printStackTrace();	
@@ -60,19 +65,22 @@ public class TextEngine {
 		}
 		for(int j=0;j<docxFiles.size();j++){
 			try{
-				System.out.println("Escribiendo "+docxFiles.get(j).getName());
 				WordExtractor extractor = new WordExtractor(docxFiles.get(j).getName());
 				String nameAux = docxFiles.get(j).getName().substring(0, docxFiles.get(j).getName().length()-5);
 				File archivoAux = new File("C:/Users/Falva/Java Work/Library_Lucene/ConvertedTexts/"+nameAux+".txt");
-				BufferedWriter bw = new BufferedWriter(new FileWriter(archivoAux));
-				bw.write(extractor.getText());
-				bw.close();
+				if(archivoAux.exists()){
+					System.out.println("Ya existe el archivo "+nameAux);
+				}
+				else{
+					System.out.println("Escribiendo "+docxFiles.get(j).getName());
+					BufferedWriter bw = new BufferedWriter(new FileWriter(archivoAux));
+					bw.write(extractor.getText());
+					bw.close();
+				}
 			}catch(IOException d){
 				JOptionPane.showMessageDialog(null, "Imposible leer archivos DOCX");
 			}
 		}
-		
-		
 	}
 	
 	public ArrayList<File> getDocx(){
